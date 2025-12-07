@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="NCERT Interactive Quiz - KhetMeKitab" data-hi="NCERT इंटरैक्टिव क्विज़ - खेत में किताब">NCERT इंटरैक्टिव क्विज़ - खेत में किताब</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html"><i class="fas fa-book-reader"></i>
+                    <span data-en="KhetMeKitab" data-hi="खेत में किताब">खेत में किताब</span></a>
+                </div>
+                <button class="lang-toggle" id="langToggle">
+                    <i class="fas fa-language"></i>
+                    <span id="langText">English</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Interactive NCERT Quiz" data-hi="इंटरैक्टिव NCERT क्विज़">इंटरैक्टिव NCERT क्विज़</h1>
+            <p data-en="Test your knowledge - 10 questions, 1 minute each" data-hi="अपने ज्ञान का परीक्षण करें - 10 प्रश्न, प्रत्येक 1 मिनट">अपने ज्ञान का परीक्षण करें - 10 प्रश्न, प्रत्येक 1 मिनट</p>
+        </div>
+    </section>
+
+    <!-- Quiz Selection Screen -->
+    <section id="quiz-selection" class="quiz-selection">
+        <div class="container">
+            <div class="selection-card">
+                <h2>📚 कक्षा चुनें (Select Class)</h2>
+                <div class="class-selection">
+                    <button class="class-btn" data-class="5">कक्षा 5</button>
+                    <button class="class-btn" data-class="6">कक्षा 6</button>
+                    <button class="class-btn" data-class="7">कक्षा 7</button>
+                    <button class="class-btn" data-class="8">कक्षा 8</button>
+                    <button class="class-btn" data-class="9">कक्षा 9</button>
+                    <button class="class-btn" data-class="10">कक्षा 10</button>
+                </div>
+            </div>
+
+            <div class="selection-card" id="subject-card" style="display: none;">
+                <h2>📖 विषय चुनें (Select Subject)</h2>
+                <div class="subject-selection">
+                    <button class="subject-btn" data-subject="science">
+                        <i class="fas fa-flask"></i>
+                        <span>विज्ञान (Science)</span>
+                    </button>
+                    <button class="subject-btn" data-subject="social">
+                        <i class="fas fa-globe"></i>
+                        <span>सामाजिक विज्ञान (Social Science)</span>
+                    </button>
+                    <button class="subject-btn" data-subject="math">
+                        <i class="fas fa-calculator"></i>
+                        <span>गणित (Math)</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quiz-info">
+                <div class="info-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>10 प्रश्न (10 Questions)</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>1 मिनट प्रति प्रश्न (1 min per question)</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>आसान से कठिन (Easy to Hard)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="quiz-screen" style="display: none;">
+        <div class="container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <div class="quiz-info-bar">
+                    <div class="quiz-meta">
+                        <span id="current-class"></span> | <span id="current-subject"></span>
+                    </div>
+                    <div class="quiz-progress">
+                        <span>प्रश्न <span id="current-question">1</span> / 10</span>
+                    </div>
+                </div>
+                <div class="timer-container">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">60</span> सेकंड
+                    <div class="timer-bar">
+                        <div id="timer-fill" class="timer-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Container -->
+            <div class="question-container">
+                <h3 id="question-text" class="question-text"></h3>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="quiz-navigation">
+                <button id="next-btn" class="btn btn-primary" style="display: none;">अगला प्रश्न (Next)</button>
+                <button id="submit-quiz-btn" class="btn btn-primary" style="display: none;">परिणाम देखें (View Results)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results-screen" class="results-screen" style="display: none;">
+        <div class="container">
+            <div class="results-card">
+                <div class="results-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2>क्विज़ पूरी हुई! (Quiz Completed!)</h2>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="score-number">
+                            <span id="score">0</span>/10
+                        </div>
+                        <div class="score-percentage">
+                            <span id="percentage">0</span>%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-stats">
+                    <div class="stat-item correct">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <div class="stat-number" id="correct-count">0</div>
+                            <div class="stat-label">सही (Correct)</div>
+                        </div>
+                    </div>
+                    <div class="stat-item wrong">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <div class="stat-number" id="wrong-count">0</div>
+                            <div class="stat-label">गलत (Wrong)</div>
+                        </div>
+                    </div>
+                    <div class="stat-item skipped">
+                        <i class="fas fa-forward"></i>
+                        <div>
+                            <div class="stat-number" id="skipped-count">0</div>
+                            <div class="stat-label">छोड़े गए (Skipped)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-message">
+                    <h3 id="performance-title"></h3>
+                    <p id="performance-message"></p>
+                </div>
+
+                <div class="answers-review">
+                    <h3>📝 आपके जवाब (Your Answers)</h3>
+                    <div id="answers-list"></div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="retry-btn" class="btn btn-primary">
+                        <i class="fas fa-redo"></i> फिर से प्रयास करें (Retry)
+                    </button>
+                    <button id="new-quiz-btn" class="btn btn-secondary">
+                        <i class="fas fa-home"></i> नई क्विज़ (New Quiz)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-en="About" data-hi="हमारे बारे में">हमारे बारे में</h4>
+                    <p data-en="KhetMeKitab is your free guide to quality education resources." data-hi="खेत में किताब गुणवत्तापूर्ण शिक्षा संसाधनों की आपकी मुफ्त मार्गदर्शिका है।">खेत में किताब गुणवत्तापूर्ण शिक्षा संसाधनों की आपकी मुफ्त मार्गदर्शिका है।</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-hi="त्वरित लिंक">त्वरित लिंक</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-hi="होम">होम</a></li>
+                        <li><a href="skills.html" data-en="Skill Paths" data-hi="कौशल मार्ग">कौशल मार्ग</a></li>
+                        <li><a href="ncert.html" data-en="NCERT Learning" data-hi="NCERT सीखना">NCERT सीखना</a></li>
+                        <li><a href="english.html" data-en="English Guide" data-hi="अंग्रेजी गाइड">अंग्रेजी गाइड</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span data-en="KhetMeKitab - Free Education for All" data-hi="खेत में किताब - सभी के लिए मुफ्त शिक्षा">खेत में किताब - सभी के लिए मुफ्त शिक्षा</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
