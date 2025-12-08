@@ -1,0 +1,429 @@
+/* Gallery Page Styles */
+
+.gallery-container {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.gallery-section {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.gallery-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-section h2 i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Women Empowerment Special Message */
+.women-empowerment-message {
+    background: linear-gradient(135deg, #E91E63, #FF4081);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.women-empowerment-message i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Personality Card */
+.personality-card {
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.personality-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-color);
+}
+
+/* Photo Placeholder - General Styling */
+.photo-placeholder {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid rgba(0,0,0,0.1);
+}
+
+.photo-placeholder i {
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    z-index: 2;
+}
+
+.photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+    z-index: 1;
+}
+
+/* Individual Personality Photo Colors */
+
+/* Leaders Section */
+.photo-placeholder.ambedkar {
+    background: linear-gradient(135deg, #1565C0, #1976D2, #42A5F5);
+}
+
+.photo-placeholder.gandhi {
+    background: linear-gradient(135deg, #F57C00, #FF9800, #FFB74D);
+}
+
+.photo-placeholder.phule {
+    background: linear-gradient(135deg, #6A1B9A, #8E24AA, #AB47BC);
+}
+
+.photo-placeholder.vivekananda {
+    background: linear-gradient(135deg, #C62828, #E53935, #EF5350);
+}
+
+/* Women Section */
+.photo-placeholder.savitribai {
+    background: linear-gradient(135deg, #AD1457, #D81B60, #EC407A);
+}
+
+.photo-placeholder.kiran {
+    background: linear-gradient(135deg, #00695C, #00897B, #26A69A);
+}
+
+.photo-placeholder.sudha {
+    background: linear-gradient(135deg, #4527A0, #5E35B1, #7E57C2);
+}
+
+.photo-placeholder.mary {
+    background: linear-gradient(135deg, #D32F2F, #F44336, #EF5350);
+}
+
+/* Scientists Section */
+.photo-placeholder.kalam {
+    background: linear-gradient(135deg, #EF6C00, #F57C00, #FF9800);
+}
+
+.photo-placeholder.raman {
+    background: linear-gradient(135deg, #0277BD, #0288D1, #03A9F4);
+}
+
+.photo-placeholder.bhabha {
+    background: linear-gradient(135deg, #558B2F, #689F38, #8BC34A);
+}
+
+.photo-placeholder.sarabhai {
+    background: linear-gradient(135deg, #5D4037, #6D4C41, #8D6E63);
+}
+
+/* Nobel Winners Section */
+.photo-placeholder.tagore {
+    background: linear-gradient(135deg, #7B1FA2, #8E24AA, #9C27B0);
+}
+
+.photo-placeholder.amartya {
+    background: linear-gradient(135deg, #1565C0, #1976D2, #2196F3);
+}
+
+.photo-placeholder.kailash {
+    background: linear-gradient(135deg, #F57F17, #F9A825, #FBC02D);
+}
+
+.photo-placeholder.abhijit {
+    background: linear-gradient(135deg, #00695C, #00796B, #009688);
+}
+
+/* Current Contributors Section */
+.photo-placeholder.disale {
+    background: linear-gradient(135deg, #C62828, #D32F2F, #E53935);
+}
+
+.photo-placeholder.wangchuk {
+    background: linear-gradient(135deg, #0277BD, #0288D1, #039BE5);
+}
+
+.photo-placeholder.anand {
+    background: linear-gradient(135deg, #EF6C00, #F57C00, #FB8C00);
+}
+
+.photo-placeholder.tessy {
+    background: linear-gradient(135deg, #AD1457, #C2185B, #D81B60);
+}
+
+/* Personality Info */
+.personality-info {
+    padding: 1.5rem;
+}
+
+.personality-info h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.role i {
+    color: var(--accent-color);
+}
+
+/* Nobel Badge */
+.nobel-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.nobel-badge i {
+    color: #C0A000;
+    margin-right: 0.5rem;
+}
+
+/* Quote Section */
+.quote {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    font-style: italic;
+    margin: 1rem 0;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quote::before {
+    content: '"';
+    font-size: 3rem;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.3;
+}
+
+/* Contributions Section */
+.contributions {
+    margin-top: 1rem;
+}
+
+.contributions h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contributions h4 i {
+    color: var(--accent-color);
+}
+
+.contributions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contributions li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.contributions li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Discovery Section */
+.discovery {
+    background: #E8F5E9;
+    border-left: 4px solid var(--success);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.discovery strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Featured Badge */
+.featured-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-color), #FF6F00);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(255, 111, 0, 0.4);
+}
+
+.featured-badge i {
+    margin-right: 0.5rem;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-placeholder {
+        height: 350px;
+    }
+
+    .photo-placeholder i {
+        font-size: 10rem;
+    }
+
+    .personality-info h3 {
+        font-size: 1.7rem;
+    }
+
+    .quote {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-placeholder {
+        height: 400px;
+    }
+
+    .photo-placeholder i {
+        font-size: 12rem;
+    }
+
+    .gallery-section {
+        padding: 4rem 3rem;
+    }
+
+    .personality-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .quote {
+        font-size: 1.15rem;
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* Animation on Page Load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.personality-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+.personality-card:nth-child(1) { animation-delay: 0.1s; }
+.personality-card:nth-child(2) { animation-delay: 0.2s; }
+.personality-card:nth-child(3) { animation-delay: 0.3s; }
+.personality-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover Effect on Photo */
+.photo-placeholder {
+    transition: all 0.3s ease;
+}
+
+.personality-card:hover .photo-placeholder {
+    transform: scale(1.05);
+}
+
+.personality-card:hover .photo-placeholder i {
+    transform: scale(1.1) rotate(5deg);
+    transition: all 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+    .personality-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

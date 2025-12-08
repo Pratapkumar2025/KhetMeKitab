@@ -734,7 +734,7 @@ const quizData = {
         social: [
             {
                 question: "भारत में पहला स्वतंत्रता संग्राम कब हुआ?",
-                options: ["1757", "1857", "1947", "1757"],
+                options: ["1757", "1857", "1942", "1947"],
                 correct: 1,
                 difficulty: "easy"
             },
